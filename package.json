@@ -1,0 +1,14 @@
+{
+  "name": "pfxamd-vesper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VESPER — Modern Maison, an editorial fragrance commerce concept",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "node --check app.mjs && node --check catalog.mjs && node --check store.mjs && npm test && npm run build"
+  }
+}

@@ -1,0 +1,9 @@
+import {productById,sizes} from './catalog.mjs';
+const KEY='vesper-store-v1';
+const blank=()=>({cart:[],wishlist:[],orders:[],profile:null,newsletter:[]});
+export function loadStore(){let data;try{data=JSON.parse(localStorage.getItem(KEY) || 'null');}catch{return blank();}if(!data||typeof data!=='object')return blank();return {cart:Array.isArray(data.cart)?data.cart.filter(x=>productById(x.id)&&Number.isInteger(x.quantity)&&x.quantity>0&&x.quantity<=10&&(x.id==='discovery-set'?x.size===0:sizes.includes(x.size))):[],wishlist:Array.isArray(data.wishlist)?data.wishlist.filter(id=>productById(id)):[],orders:Array.isArray(data.orders)?data.orders:[],profile:data.profile&&typeof data.profile.email==='string'?data.profile:null,newsletter:Array.isArray(data.newsletter)?data.newsletter:[]};}
+export function saveStore(state){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{/* storage may be blocked */}}
+export function addCart(state,id,size=50,quantity=1){if(!productById(id)||!(id==='discovery-set'?size===0:sizes.includes(size)))return;const line=state.cart.find(p=>p.id===id&&p.size===size);if(line)line.quantity=Math.min(10,line.quantity+Math.max(1,quantity));else state.cart.push({id,size,quantity:Math.min(10,Math.max(1,quantity))});saveStore(state);}
+export function updateQuantity(state,id,size,quantity){const line=state.cart.find(p=>p.id===id&&p.size===size);if(!line)return;if(quantity<=0)state.cart=state.cart.filter(p=>p!==line);else line.quantity=Math.max(1,Math.min(10,quantity));saveStore(state);}
+export function toggleWish(state,id){if(!productById(id))return;state.wishlist=state.wishlist.includes(id)?state.wishlist.filter(x=>x!==id):[...state.wishlist,id];saveStore(state);}
+export const orderNumber=()=>`VS-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,5).toUpperCase()}`;
