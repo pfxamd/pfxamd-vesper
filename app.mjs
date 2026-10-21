@@ -1,5 +1,6 @@
 import {fragrances,discovery,productById,priceOf,money,quote,journal} from './catalog.mjs';
 import {loadStore,saveStore,addCart,updateQuantity,toggleWish,orderNumber} from './store.mjs';
+import {mediaFor} from './media.mjs';
 
 const app=document.getElementById('app');
 const state=loadStore();
@@ -10,7 +11,7 @@ const escapeHTML = v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt
 const href = path=>`#${path}`;
 function route(){let raw='/';try{raw=decodeURIComponent(location.hash.slice(1)||'/');}catch{raw='/';}const i=raw.indexOf('?');return {path:(i===-1?raw:raw.slice(0,i)).replace(/\/$/,'')||'/',params:new URLSearchParams(i===-1?'':raw.slice(i+1))};}
 function nav(label,path,cls=''){return `<a class="${cls}" href="${href(path)}">${label}</a>`;}
-function visual(item,variant='tile',label='FRAGRANCE VISUAL / COMING SOON'){return `<div class="visual visual--${variant}" style="--visual:${item.color};--visual-ink:${item.ink||'#42483d'}"><span class="visual__code">VESPER / ${item.index||'THE SET'}</span><div class="visual__center">${item.name}</div><span class="visual__caption">${label}</span></div>`;}
+function visual(item,variant='tile',label='FRAGRANCE VISUAL / COMING SOON'){const photo=mediaFor(item,variant,label);if(photo)return `<div class="visual visual--${variant} visual--photo"><img src="${photo.src}" alt="${photo.alt}" ${photo.priority?'fetchpriority="high" loading="eager"':'loading="lazy"'} decoding="async"></div>`;return `<div class="visual visual--${variant}" style="--visual:${item.color};--visual-ink:${item.ink||'#42483d'}"><span class="visual__code">VESPER / ${item.index||'THE SET'}</span><div class="visual__center">${item.name}</div><span class="visual__caption">${label}</span></div>`;}
 function wishButton(id){const active=state.wishlist.includes(id);return `<button class="wish-btn ${active?'is-active':''}" data-action="wish" data-id="${id}" aria-label="${active?'Remove from':'Add to'} wishlist" aria-pressed="${active}">${icon('heart',19)}</button>`;}
 function productCard(item,i=0){return `<article class="product-card"><div class="product-card__media"><a href="${href('/product/'+item.id)}" aria-label="Explore ${item.name}">${visual(item,'tile')}</a>${wishButton(item.id)}<div class="product-card__quick"><button data-action="quick-add" data-id="${item.id}">Quick add · 50 ml ${icon('plus',15)}</button></div></div><div class="product-card__meta"><div><p class="eyebrow">${item.family} · Eau de parfum</p><a class="product-card__name" href="${href('/product/'+item.id)}">${item.name}</a><p class="product-card__sub">${item.caption}</p></div><span class="product-card__price">${money(item.price)}</span></div></article>`;}
 function sectionTitle(kicker,title,description='',link='',linkText='Explore all'){return `<div class="section-head"><div><p class="eyebrow">${kicker}</p><h2>${title}</h2>${description?`<p class="muted section-head__desc">${description}</p>`:''}</div>${link?nav(`${linkText} ${icon('arrow',19)}`,link,'text-link'):''}</div>`;}

@@ -1,11 +1,17 @@
-import {mkdir, copyFile, rm, readFile, writeFile} from 'node:fs/promises';
+import {mkdir, copyFile, rm, readFile, writeFile, readdir} from 'node:fs/promises';
 import {resolve, join} from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const dist = join(root, 'dist');
-const files = ['index.html','styles.css','app.mjs','catalog.mjs','store.mjs','favicon.svg','robots.txt'];
+const files = ['index.html','styles.css','app.mjs','catalog.mjs','store.mjs','media.mjs','favicon.svg','robots.txt'];
 await rm(dist, {recursive:true, force:true});
 await mkdir(dist, {recursive:true});
 for (const file of files) await copyFile(join(root,file),join(dist,file));
+await mkdir(join(dist,'assets'), {recursive:true});
+for (const file of await readdir(join(root,'assets'))) {
+  if (!file.endsWith('.webp')) continue;
+  await copyFile(join(root,'assets',file),join(dist,'assets',file));
+}
+
 const html=await readFile(join(dist,'index.html'),'utf8');
 for(const file of ['styles.css','app.mjs','favicon.svg']) if(!html.includes(`./${file}`)) throw new Error(`Missing ${file} reference in HTML`);
 // Use a real entry document for static hosts: no rewrite rules or JS build runtime required.
