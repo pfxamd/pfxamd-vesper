@@ -1,4 +1,4 @@
-/** Approved photography from the first two VESPER product sets. */
+/** Approved photography from the first three VESPER product sets. */
 export const productMedia = Object.freeze({
   'lune-i': Object.freeze({
     main: 'lune-i-main.webp',
@@ -9,6 +9,11 @@ export const productMedia = Object.freeze({
     main: 'sable-main.webp',
     detail: 'sable-detail.webp',
     ingredients: 'sable-ingredients.webp',
+  }),
+  cendre: Object.freeze({
+    main: 'cendre-main.webp',
+    detail: 'cendre-detail.webp',
+    ingredients: 'cendre-ingredients.webp',
   }),
 });
 
