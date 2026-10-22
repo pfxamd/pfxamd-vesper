@@ -1,6 +1,6 @@
-import {fragrances,discovery,productById,priceOf,money,quote,journal} from './catalog.mjs';
+import {fragrances,discovery,productById,priceOf,money,quote,journal} from './catalog.mjs?v=photography-20261022';
 import {loadStore,saveStore,addCart,updateQuantity,toggleWish,orderNumber} from './store.mjs';
-import {mediaFor,editorialMedia} from './media.mjs';
+import {mediaFor,editorialMedia} from './media.mjs?v=photography-20261022';
 
 const app=document.getElementById('app');
 const state=loadStore();
