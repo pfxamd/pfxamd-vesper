@@ -9,7 +9,7 @@ test('every approved asset exists, and each approved product has distinct photog
     for(const src of Object.values(shots)) {
       const url = new URL(src);
       assert.equal(url.origin, 'https://media.pfxamd.com');
-      assert.ok(url.pathname.startsWith('/vesper/'));
+      assert.ok(url.pathname.startsWith('/pfxamd/concepts/vesper/'));
       assert.ok(existsSync(new URL('../assets/'+url.pathname.split('/').pop(),import.meta.url)), src);
     }
     assert.ok(fragrances.some(p=>p.id===id));

@@ -1,29 +1,29 @@
 /** Approved photography for VESPER product sets. */
 export const productMedia = Object.freeze({
   'lune-i': Object.freeze({
-    main: 'https://media.pfxamd.com/vesper/lune-i-main.webp',
-    detail: 'https://media.pfxamd.com/vesper/lune-i-detail.webp',
-    ingredients: 'https://media.pfxamd.com/vesper/lune-i-ingredients.webp',
+    main: 'https://media.pfxamd.com/pfxamd/concepts/vesper/lune-i-main.webp',
+    detail: 'https://media.pfxamd.com/pfxamd/concepts/vesper/lune-i-detail.webp',
+    ingredients: 'https://media.pfxamd.com/pfxamd/concepts/vesper/lune-i-ingredients.webp',
   }),
   sable: Object.freeze({
-    main: 'https://media.pfxamd.com/vesper/sable-main.webp',
-    detail: 'https://media.pfxamd.com/vesper/sable-detail.webp',
-    ingredients: 'https://media.pfxamd.com/vesper/sable-ingredients.webp',
+    main: 'https://media.pfxamd.com/pfxamd/concepts/vesper/sable-main.webp',
+    detail: 'https://media.pfxamd.com/pfxamd/concepts/vesper/sable-detail.webp',
+    ingredients: 'https://media.pfxamd.com/pfxamd/concepts/vesper/sable-ingredients.webp',
   }),
   cendre: Object.freeze({
-    main: 'https://media.pfxamd.com/vesper/cendre-main.webp',
-    detail: 'https://media.pfxamd.com/vesper/cendre-detail.webp',
-    ingredients: 'https://media.pfxamd.com/vesper/cendre-ingredients.webp',
+    main: 'https://media.pfxamd.com/pfxamd/concepts/vesper/cendre-main.webp',
+    detail: 'https://media.pfxamd.com/pfxamd/concepts/vesper/cendre-detail.webp',
+    ingredients: 'https://media.pfxamd.com/pfxamd/concepts/vesper/cendre-ingredients.webp',
   }),
   solin: Object.freeze({
-    main: 'https://media.pfxamd.com/vesper/solin-main.webp',
-    detail: 'https://media.pfxamd.com/vesper/solin-detail.webp',
-    ingredients: 'https://media.pfxamd.com/vesper/solin-ingredients.webp',
+    main: 'https://media.pfxamd.com/pfxamd/concepts/vesper/solin-main.webp',
+    detail: 'https://media.pfxamd.com/pfxamd/concepts/vesper/solin-detail.webp',
+    ingredients: 'https://media.pfxamd.com/pfxamd/concepts/vesper/solin-ingredients.webp',
   }),
   velum: Object.freeze({
-    main: 'https://media.pfxamd.com/vesper/velum-main.webp',
-    detail: 'https://media.pfxamd.com/vesper/velum-detail.webp',
-    ingredients: 'https://media.pfxamd.com/vesper/velum-ingredients.webp',
+    main: 'https://media.pfxamd.com/pfxamd/concepts/vesper/velum-main.webp',
+    detail: 'https://media.pfxamd.com/pfxamd/concepts/vesper/velum-detail.webp',
+    ingredients: 'https://media.pfxamd.com/pfxamd/concepts/vesper/velum-ingredients.webp',
   }),
 });
 
