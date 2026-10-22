@@ -1,4 +1,4 @@
-/** Approved photography from the first four VESPER product sets. */
+/** Approved photography for VESPER product sets. */
 export const productMedia = Object.freeze({
   'lune-i': Object.freeze({
     main: 'lune-i-main.webp',
@@ -20,6 +20,11 @@ export const productMedia = Object.freeze({
     detail: 'solin-detail.webp',
     ingredients: 'solin-ingredients.webp',
   }),
+  velum: Object.freeze({
+    main: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/445ee6d0-cc4f-4f66-8d84-4de8b0134a4c.webp',
+    detail: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/6d3241ce-4ada-434f-bd22-7a30bd9c5940.webp',
+    ingredients: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/74ec384c-bcaa-4c99-84e4-e9d8ef3cf747.webp',
+  }),
 });
 
 export function mediaFor(item, variant, label = '') {
@@ -28,7 +33,7 @@ export function mediaFor(item, variant, label = '') {
   const kind = label.includes('MATERIAL IMAGE') ? 'ingredients'
     : label.includes('DETAIL IMAGE') ? 'detail' : 'main';
   return {
-    src: `./assets/${photos[kind]}`,
+    src: photos[kind].startsWith('https://') ? photos[kind] : `./assets/${photos[kind]}`,
     alt: kind === 'ingredients'
       ? `Ingredients of ${item.name}: the fragrance composition`
       : kind === 'detail'
