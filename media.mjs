@@ -1,29 +1,29 @@
 /** Approved photography for VESPER product sets. */
 export const productMedia = Object.freeze({
   'lune-i': Object.freeze({
-    main: 'lune-i-main.webp',
-    detail: 'lune-i-detail.webp',
-    ingredients: 'lune-i-ingredients.webp',
+    main: 'https://media.pfxamd.com/vesper/lune-i-main.webp',
+    detail: 'https://media.pfxamd.com/vesper/lune-i-detail.webp',
+    ingredients: 'https://media.pfxamd.com/vesper/lune-i-ingredients.webp',
   }),
   sable: Object.freeze({
-    main: 'sable-main.webp',
-    detail: 'sable-detail.webp',
-    ingredients: 'sable-ingredients.webp',
+    main: 'https://media.pfxamd.com/vesper/sable-main.webp',
+    detail: 'https://media.pfxamd.com/vesper/sable-detail.webp',
+    ingredients: 'https://media.pfxamd.com/vesper/sable-ingredients.webp',
   }),
   cendre: Object.freeze({
-    main: 'cendre-main.webp',
-    detail: 'cendre-detail.webp',
-    ingredients: 'cendre-ingredients.webp',
+    main: 'https://media.pfxamd.com/vesper/cendre-main.webp',
+    detail: 'https://media.pfxamd.com/vesper/cendre-detail.webp',
+    ingredients: 'https://media.pfxamd.com/vesper/cendre-ingredients.webp',
   }),
   solin: Object.freeze({
-    main: 'solin-main.webp',
-    detail: 'solin-detail.webp',
-    ingredients: 'solin-ingredients.webp',
+    main: 'https://media.pfxamd.com/vesper/solin-main.webp',
+    detail: 'https://media.pfxamd.com/vesper/solin-detail.webp',
+    ingredients: 'https://media.pfxamd.com/vesper/solin-ingredients.webp',
   }),
   velum: Object.freeze({
-    main: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/445ee6d0-cc4f-4f66-8d84-4de8b0134a4c.webp',
-    detail: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/6d3241ce-4ada-434f-bd22-7a30bd9c5940.webp',
-    ingredients: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IwyLACOaXKwxZct2VlGvtPvAYT/74ec384c-bcaa-4c99-84e4-e9d8ef3cf747.webp',
+    main: 'https://media.pfxamd.com/vesper/velum-main.webp',
+    detail: 'https://media.pfxamd.com/vesper/velum-detail.webp',
+    ingredients: 'https://media.pfxamd.com/vesper/velum-ingredients.webp',
   }),
 });
 
