@@ -27,3 +27,6 @@
 .visual--photo.visual--large img{object-position:center center}
 .visual--photo.visual--detail img{object-position:center center}
 .visual--photo.visual--tile img{object-position:center center}
+/* Photography fills the existing reserved panels without changing their layout. */
+.image-panel{position:relative;overflow:hidden;padding:0}
+.image-panel>.editorial-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center}

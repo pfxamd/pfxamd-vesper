@@ -1,6 +1,6 @@
 # VESPER — Contemporary Perfumery
 
-A fictional niche fragrance maison and functional, image-free storefront concept by PFxamd. Modern Maison art direction: mineral color panels reserve every product and editorial image until original photography is supplied.
+A fictional niche fragrance maison and functional storefront concept by PFxamd. Modern Maison art direction with 28 original product and editorial photographs served from the VESPER Cloudflare R2 library.
 
 ## Experience
 
@@ -32,9 +32,11 @@ Open `http://127.0.0.1:4173`.
 
 `npm run build` generates `dist/`. Configure Cloudflare Pages/Workers static assets to publish that directory (build command `npm run build`, output `dist`). A plain static host can also serve the repository root. No Node server or environment variables are needed at runtime. Hash-based internal routes (`/#/shop`, `/#/finder`, etc.) do not require server rewrite configuration.
 
-## Replacing the color panels with original images
+## Photography library
 
-Product and editorial placeholders are rendered by `visual()` and section-specific field styles in `app.mjs` / `styles.css`. Preserve the product metadata in `catalog.mjs`; swap placeholder markup for `<picture>` or `<img>` using locally optimized AVIF/WebP assets, meaningful `alt` text and appropriate aspect ratios. The storefront currently does not fetch or embed images.
+`media.mjs` maps 18 fragrance photographs, 3 Discovery Set photographs and 7 editorial photographs to verified R2 URLs under `pfxamd/concepts/vesper/`. Journal images are shared between cards and articles. Photography fills the existing panel dimensions without changing the storefront layout.
+
+The 13 completion originals and their SHA-256 manifest are preserved in `.github/media-originals/completion/`, excluded by GitHub Pages Jekyll and absent from the `dist/` build. Earlier originals remain in `assets/`. Upload and verify new files before changing their media mappings; never store R2 credentials in this repository.
 
 ## Shared PFx cores
 
